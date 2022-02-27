@@ -34,10 +34,14 @@
 							u.email,
 							r.id as idrol,
 							r.nombre_rol as nombrerol,
-							u.estado 
+							u.estado,
+							IFNULL(s.id, 0) as seccional_id,
+							IFNULL(s.nombre_seccional, 'Supremo líder estatal') as nombre_seccional
 					FROM usuarios u
 					INNER JOIN roles r
 					ON u.rol_id = r.id
+					LEFT JOIN seccionales s
+					ON r.seccional = s.id
 					WHERE u.id = $this->intIdUsuario";
 			$request = $this->select($sql);
 			$_SESSION['userData'] = $request;

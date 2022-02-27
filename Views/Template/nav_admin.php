@@ -76,7 +76,7 @@
                         <div class="collapse" id="seccionalPage">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="#">Tabla</a>
+                                    <a href="<?= base_url(); ?>/seccionales">Tabla</a>
                                 </li>
                                 <li>
                                     <a href="#">Consultas</a>
@@ -131,7 +131,9 @@
                                     <span class="account-user-name">
                                         <?= $_SESSION['userData']['nombres']; ?>
                                     </span>
-                                    <span class="account-position"><?= $_SESSION['userData']['nombrerol']; ?></span>
+                                    <span class="account-position"><?= $_SESSION['userData']['nombrerol']; ?> -
+                                        <?= $_SESSION['userData']['nombre_seccional'] ?>
+                                    </span>
                                 </span>
                             </a>
                             <div

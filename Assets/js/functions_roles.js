@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'id' },
       { data: 'nombre_rol' },
       { data: 'descripcion' },
+      { data: 'nombre_seccional' },
       { data: 'estado' },
       { data: 'options' },
     ],
@@ -144,37 +145,36 @@ function fntDelRol(idrol) {
     icon: 'warning',
     buttons: true,
     dangerMode: true,
-  })
-    .then((willDelete) => {
-      if (willDelete) {
-        var request = window.XMLHttpRequest
-          ? new XMLHttpRequest()
-          : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url + '/Roles/delRol/';
-        var strData = 'idrol=' + idrol;
-        request.open('POST', ajaxUrl, true);
-        request.setRequestHeader(
-          'Content-type',
-          'application/x-www-form-urlencoded',
-        );
-        request.send(strData);
-        request.onreadystatechange = function () {
-          if (request.readyState == 4 && request.status == 200) {
-            var objData = JSON.parse(request.responseText);
-            if (objData.status) {
-              swal('Eliminar!', objData.msg, 'success');
-              tableRoles.api().ajax.reload(function () {
-                fntEditRol();
-                fntDelRol();
-                fntPermisos();
-              });
-            } else {
-              swal('Atención!', objData.msg, 'error');
-            }
+  }).then((willDelete) => {
+    if (willDelete) {
+      var request = window.XMLHttpRequest
+        ? new XMLHttpRequest()
+        : new ActiveXObject('Microsoft.XMLHTTP');
+      var ajaxUrl = base_url + '/Roles/delRol/';
+      var strData = 'idrol=' + idrol;
+      request.open('POST', ajaxUrl, true);
+      request.setRequestHeader(
+        'Content-type',
+        'application/x-www-form-urlencoded',
+      );
+      request.send(strData);
+      request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+          var objData = JSON.parse(request.responseText);
+          if (objData.status) {
+            swal('Eliminar!', objData.msg, 'success');
+            tableRoles.api().ajax.reload(function () {
+              fntEditRol();
+              fntDelRol();
+              fntPermisos();
+            });
+          } else {
+            swal('Atención!', objData.msg, 'error');
           }
-        };
-      }
-    });
+        }
+      };
+    }
+  });
 }
 
 function fntPermisos(idrol) {

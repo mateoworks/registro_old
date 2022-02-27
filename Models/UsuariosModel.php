@@ -60,7 +60,7 @@
 		{
 			$whereAdmin = "";
 			if($_SESSION['idUser'] != 1 ){
-				$whereAdmin = " and p.idpersona != 1 ";
+				$whereAdmin = " and u.id != 1 ";
 			}
 			$sql = "SELECT u.id, u.nombre_propio, u.apellidos, u.telefono, u.email, u.estado, r.id as id_rol, r.nombre_rol 
 					FROM usuarios u 

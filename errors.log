@@ -1,59 +1,8 @@
-[26-Feb-2022 18:19:50 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'registro.persona' doesn't exist in C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php:368
-Stack trace:
-#0 C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php(368): PDO->prepare('select * from `...')
-#1 C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
-#2 C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
-#3 C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
-#4 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(2513): Illuminate\Database\Connection->select('select * from `...', Array, true)
-#5 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(2501): Illuminate\Database\Query\Builder->runSelect()
-#6 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(3035): Illuminate\Database\Query\Builder->Illuminate\Database\Query\{closure}()
-#7 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(2502): Illuminate\Database\Query\Builder->onceWithColumns(Array, Object(Closure))
-#8 C:\xampp\htdocs\store\vendor\illuminate\database\Eloquent\Builder.php(632): Illuminate\Database\Query\Builder->get(Array)
-#9 C:\xampp\htdocs\store\vendor\illuminate\database\Eloquent\Builder.php(616): Illuminate\Database\Eloquent\Builder->getModels(Array)
-#10 C:\xampp\htdocs\store\vendor\illuminate\database\Eloquent\Model.php(568): Illuminate\Database\Eloquent\Builder->get(Array)
-#11 C:\xampp\htdocs\store\Controllers\Dashboard.php(19): Illuminate\Database\Eloquent\Model::all()
-#12 C:\xampp\htdocs\store\Libraries\Core\Load.php(10): Dashboard->dashboard('')
-#13 C:\xampp\htdocs\store\index.php(44): require_once('C:\\xampp\\htdocs...')
-#14 {main}
-
-Next Illuminate\Database\QueryException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'registro.persona' doesn't exist (SQL: select * from `persona`) in C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php:712
-Stack trace:
-#0 C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
-#1 C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
-#2 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(2513): Illuminate\Database\Connection->select('select * from `...', Array, true)
-#3 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(2501): Illuminate\Database\Query\Builder->runSelect()
-#4 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(3035): Illuminate\Database\Query\Builder->Illuminate\Database\Query\{closure}()
-#5 C:\xampp\htdocs\store\vendor\illuminate\database\Query\Builder.php(2502): Illuminate\Database\Query\Builder->onceWithColumns(Array, Object(Closure))
-#6 C:\xampp\htdocs\store\vendor\illuminate\database\Eloquent\Builder.php(632): Illuminate\Database\Query\Builder->get(Array)
-#7 C:\xampp\htdocs\store\vendor\illuminate\database\Eloquent\Builder.php(616): Illuminate\Database\Eloquent\Builder->getModels(Array)
-#8 C:\xampp\htdocs\store\vendor\illuminate\database\Eloquent\Model.php(568): Illuminate\Database\Eloquent\Builder->get(Array)
-#9 C:\xampp\htdocs\store\Controllers\Dashboard.php(19): Illuminate\Database\Eloquent\Model::all()
-#10 C:\xampp\htdocs\store\Libraries\Core\Load.php(10): Dashboard->dashboard('')
-#11 C:\xampp\htdocs\store\index.php(44): require_once('C:\\xampp\\htdocs...')
-#12 {main}
-  thrown in C:\xampp\htdocs\store\vendor\illuminate\database\Connection.php on line 712
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "identificacion" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 19
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 44
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "identificacion" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 38
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 54
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "nit" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 67
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "nombrefiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 71
-[26-Feb-2022 18:24:31 America/Mexico_City] PHP Warning:  Undefined array key "direccionfiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 77
-[26-Feb-2022 18:26:24 America/Mexico_City] PHP Warning:  Undefined array key "identificacion" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 19
-[26-Feb-2022 18:26:24 America/Mexico_City] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 44
-[26-Feb-2022 18:26:24 America/Mexico_City] PHP Warning:  Undefined array key "nombre_propio" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 40
-[26-Feb-2022 18:26:24 America/Mexico_City] PHP Warning:  Undefined array key "nit" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 66
-[26-Feb-2022 18:26:24 America/Mexico_City] PHP Warning:  Undefined array key "nombrefiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 71
-[26-Feb-2022 18:26:24 America/Mexico_City] PHP Warning:  Undefined array key "direccionfiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 78
-[26-Feb-2022 18:26:47 America/Mexico_City] PHP Warning:  Undefined array key "identificacion" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 19
-[26-Feb-2022 18:26:47 America/Mexico_City] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 44
-[26-Feb-2022 18:26:47 America/Mexico_City] PHP Warning:  Undefined array key "nit" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 66
-[26-Feb-2022 18:26:47 America/Mexico_City] PHP Warning:  Undefined array key "nombrefiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 71
-[26-Feb-2022 18:26:47 America/Mexico_City] PHP Warning:  Undefined array key "direccionfiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 78
-[26-Feb-2022 18:35:13 America/Mexico_City] PHP Warning:  Undefined array key "identificacion" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 19
-[26-Feb-2022 18:35:13 America/Mexico_City] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 44
-[26-Feb-2022 18:35:13 America/Mexico_City] PHP Warning:  Undefined array key "nit" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 66
-[26-Feb-2022 18:35:13 America/Mexico_City] PHP Warning:  Undefined array key "nombrefiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 71
-[26-Feb-2022 18:35:13 America/Mexico_City] PHP Warning:  Undefined array key "direccionfiscal" in C:\xampp\htdocs\store\Views\Usuarios\perfil.php on line 78
-[26-Feb-2022 18:38:55 America/Mexico_City] PHP Warning:  Undefined array key "identificacion" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 19
-[26-Feb-2022 18:38:55 America/Mexico_City] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\store\Views\Template\Modals\modalPerfil.php on line 44
+[26-Feb-2022 23:52:12 America/Mexico_City] PHP Warning:  require_once(Views/Seccionales/secionales.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\registro\Libraries\Core\Views.php on line 13
+[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Template\nav_admin.php on line 132
+[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Template\nav_admin.php on line 134
+[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Template\nav_admin.php on line 135
+[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Seccionales\seccionales.php on line 20
+[26-Feb-2022 23:52:49 America/Mexico_City] PHP Warning:  Undefined array key "page_functions_js" in C:\xampp\htdocs\registro\Views\Template\footer_admin.php on line 54
+[26-Feb-2022 23:56:47 America/Mexico_City] PHP Warning:  Undefined array key "page_functions_js" in C:\xampp\htdocs\registro\Views\Template\footer_admin.php on line 54
+[26-Feb-2022 23:58:03 America/Mexico_City] PHP Warning:  Undefined array key "page_functions_js" in C:\xampp\htdocs\registro\Views\Template\footer_admin.php on line 54

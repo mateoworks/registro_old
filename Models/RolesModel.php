@@ -16,10 +16,16 @@
 		{
 			$whereAdmin = "";
 			if($_SESSION['idUser'] != 1 ){
-				$whereAdmin = " and idrol != 1 ";
+				$whereAdmin = " and r.id != 1 ";
 			}
 			//EXTRAE ROLES
-			$sql = "SELECT * FROM roles WHERE estado != 0".$whereAdmin;
+			$sql = "SELECT r.id as id, r.nombre_rol as nombre_rol,
+			r.descripcion as descripcion, r.estado as estado,
+			IFNULL(s.id, 0) seccional_id, 
+			IFNULL(s.nombre_seccional, 'Supremo líder estatal') as nombre_seccional 
+			FROM roles r
+			LEFT JOIN seccionales s ON r.seccional = s.id
+			WHERE r.estado != 0".$whereAdmin;
 			$request = $this->select_all($sql);
 			return $request;
 		}

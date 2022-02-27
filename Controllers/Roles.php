@@ -41,6 +41,9 @@
 					}else{
 						$arrData[$i]['estado'] = '<span class="badge bg-danger rounded-pill">Inactivo</span>';
 					}
+					if($arrData[$i]["seccional_id"] == 0){
+						$arrData[$i]["nombre_seccional"] = "Supremo líder estatal";
+					}
 
 					if($_SESSION['permisosMod']['u']){
 						$btnView = '<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos('.$arrData[$i]['id'].')" title="Permisos"><i class="uil-key-skeleton-alt"></i></button>';
@@ -57,6 +60,7 @@
 			die();
 		}
 
+	
 		public function getSelectRoles()
 		{
 			$htmlOptions = "";

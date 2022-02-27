@@ -44,9 +44,9 @@ const base_url = "<?= base_url(); ?>";
 <script src="<?= media(); ?>/js/vendor.min.js"></script>
 <script src="<?= media(); ?>/js/app.min.js"></script>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?= media(); ?>/js/sweetalert.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+<script src="<?= media(); ?>/js/bootstrap-select.min.js"></script>
 
 <script type="text/javascript" src="<?= media(); ?>/js/jquery.dataTables.min.js"></script>
 

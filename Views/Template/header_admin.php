@@ -16,8 +16,7 @@
     <!-- Datatable -->
     <link rel="stylesheet" href="<?= media(); ?>/css/jquery.dataTables.min.css">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="<?= media(); ?>/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="<?= media(); ?>/css/style.css">
 </head>
 <?php include_once("nav_admin.php"); ?>

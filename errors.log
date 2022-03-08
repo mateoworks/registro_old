@@ -1,8 +1,0 @@
-[26-Feb-2022 23:52:12 America/Mexico_City] PHP Warning:  require_once(Views/Seccionales/secionales.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\registro\Libraries\Core\Views.php on line 13
-[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Template\nav_admin.php on line 132
-[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Template\nav_admin.php on line 134
-[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Template\nav_admin.php on line 135
-[26-Feb-2022 23:52:48 America/Mexico_City] PHP Warning:  Undefined variable $_SESSION in C:\xampp\htdocs\registro\Views\Seccionales\seccionales.php on line 20
-[26-Feb-2022 23:52:49 America/Mexico_City] PHP Warning:  Undefined array key "page_functions_js" in C:\xampp\htdocs\registro\Views\Template\footer_admin.php on line 54
-[26-Feb-2022 23:56:47 America/Mexico_City] PHP Warning:  Undefined array key "page_functions_js" in C:\xampp\htdocs\registro\Views\Template\footer_admin.php on line 54
-[26-Feb-2022 23:58:03 America/Mexico_City] PHP Warning:  Undefined array key "page_functions_js" in C:\xampp\htdocs\registro\Views\Template\footer_admin.php on line 54

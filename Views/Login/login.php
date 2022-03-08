@@ -85,7 +85,7 @@
     <!-- bundle -->
     <script src="<?= media(); ?>/js/vendor.min.js"></script>
     <script src="<?= media(); ?>/js/app.min.js"></script>
-    <script type="text/javascript" src="<?= media();?>/js/plugins/sweetalert.min.js"></script>
+    <script src="<?= media(); ?>/js/sweetalert.min.js"></script>
     <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
 
 </body>

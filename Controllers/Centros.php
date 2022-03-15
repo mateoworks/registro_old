@@ -1,7 +1,7 @@
 <?php 
 
 require_once("Models/v_centros.php");
-
+use Illuminate\Contracts\Pagination;
 	class Centros extends Controllers{
 		public function __construct()
 		{
@@ -22,11 +22,11 @@ require_once("Models/v_centros.php");
 			$data = array();
 			$seccional = $_SESSION['userData']['seccional_id'];
             if($seccional == 0){
-                $centro = VCentrosModel::all();
+                $centros = VCentrosModel::all();
             }else{
-                $centro = VCentrosModel::where("seccional_id", $seccional)->get();
+                $centros = VCentrosModel::where("sec_id", $seccional)->get();
             }
-            $data["centros"] = $centro->toArray();
+            $data["centros"] = $centros->toArray();
 			$this->views->getView($this, "centros", $data);
 		}
 

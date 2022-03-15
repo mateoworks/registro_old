@@ -35,7 +35,7 @@
                     <?php if(!empty($_SESSION['permisos'][1]['r'])){ ?>
                     <li class="side-nav-item">
                         <a href="<?= base_url(); ?>/dashboard" class="side-nav-link">
-                            <i class="uil-home-alt"></i>
+                            <i class="uil-dashboard"></i>
                             <span> Dashboard</span>
                         </a>
                     </li>
@@ -70,7 +70,7 @@
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#seccionalPage" aria-expanded="false"
                             aria-controls="seccionalPage" class="side-nav-link">
-                            <i class="uil-copy-alt"></i>
+                            <i class="uil-map-marker-shield"></i>
                             <span> Seccionales</span>
                             <span class="menu-arrow"></span>
                         </a>
@@ -91,7 +91,7 @@
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#municipiosPage" aria-expanded="false"
                             aria-controls="municipiosPage" class="side-nav-link">
-                            <i class="uil-copy-alt"></i>
+                            <i class="uil-building"></i>
                             <span> Municipios</span>
                             <span class="menu-arrow"></span>
                         </a>
@@ -112,7 +112,7 @@
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#centrosPage" aria-expanded="false"
                             aria-controls="centrosPage" class="side-nav-link">
-                            <i class="uil-copy-alt"></i>
+                            <i class="uil-home"></i>
                             <span> Centros</span>
                             <span class="menu-arrow"></span>
                         </a>
@@ -133,7 +133,7 @@
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#organismosPage" aria-expanded="false"
                             aria-controls="organismosPage" class="side-nav-link">
-                            <i class="uil-copy-alt"></i>
+                            <i class="uil-book-reader"></i>
                             <span> Organismos</span>
                             <span class="menu-arrow"></span>
                         </a>
@@ -154,7 +154,7 @@
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#integrantesPage" aria-expanded="false"
                             aria-controls="integrantesPage" class="side-nav-link">
-                            <i class="uil-copy-alt"></i>
+                            <i class="uil-users-alt"></i>
                             <span> Integrantes</span>
                             <span class="menu-arrow"></span>
                         </a>

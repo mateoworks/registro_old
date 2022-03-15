@@ -13,6 +13,7 @@
     }
   ],
   "require": {
-    "illuminate/database": "*"
+    "illuminate/database": "*",
+    "illuminate/pagination": "^9.4"
   }
 }

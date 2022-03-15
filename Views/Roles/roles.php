@@ -19,13 +19,15 @@
                         <li class="breadcrumb-item active">Roles</li>
                     </ol>
                 </div>
-                <h4 class="page-title"><?= $data['page_title'] ?></h4>
-                <?php if($_SESSION['permisosMod']['w']){ ?>
-                <button class="btn btn-primary" type="button" onclick="openModal();">
-                    <i class="uil-plus"></i>
-                    Nuevo
-                </button>
-                <?php } ?>
+                <h4 class="page-title"><?= $data['page_title'] ?>
+                    <?php if($_SESSION['permisosMod']['w']){ ?>
+                    <a class="btn btn-primary" type="button" href="<?= base_url() . "/Roles/crear" ?>">
+                        <i class="uil-plus"></i>
+                        Nuevo rol
+                    </a>
+                    <?php } ?>
+                </h4>
+
             </div>
         </div>
     </div>

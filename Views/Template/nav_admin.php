@@ -66,6 +66,7 @@
 
                     <li class="side-nav-title side-nav-item">Tablas básicas</li>
 
+                    <?php if(!empty($_SESSION['permisos'][3]['r'])){ ?>
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#seccionalPage" aria-expanded="false"
                             aria-controls="seccionalPage" class="side-nav-link">
@@ -84,6 +85,93 @@
                             </ul>
                         </div>
                     </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION['permisos'][4]['r'])){ ?>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#municipiosPage" aria-expanded="false"
+                            aria-controls="municipiosPage" class="side-nav-link">
+                            <i class="uil-copy-alt"></i>
+                            <span> Municipios</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="municipiosPage">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="<?= base_url(); ?>/municipios">Tabla</a>
+                                </li>
+                                <li>
+                                    <a href="#">Consultas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION['permisos'][5]['r'])){ ?>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#centrosPage" aria-expanded="false"
+                            aria-controls="centrosPage" class="side-nav-link">
+                            <i class="uil-copy-alt"></i>
+                            <span> Centros</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="centrosPage">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="<?= base_url(); ?>/centros">Tabla</a>
+                                </li>
+                                <li>
+                                    <a href="#">Consultas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION['permisos'][6]['r'])){ ?>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#organismosPage" aria-expanded="false"
+                            aria-controls="organismosPage" class="side-nav-link">
+                            <i class="uil-copy-alt"></i>
+                            <span> Organismos</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="organismosPage">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="<?= base_url(); ?>/organismos">Tabla</a>
+                                </li>
+                                <li>
+                                    <a href="#">Consultas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION['permisos'][7]['r'])){ ?>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#integrantesPage" aria-expanded="false"
+                            aria-controls="integrantesPage" class="side-nav-link">
+                            <i class="uil-copy-alt"></i>
+                            <span> Integrantes</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="integrantesPage">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="<?= base_url(); ?>/integrantes">Tabla</a>
+                                </li>
+                                <li>
+                                    <a href="#">Consultas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php } ?>
+
+
 
                 </ul>
                 <!-- End Sidebar -->

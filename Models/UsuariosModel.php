@@ -73,7 +73,7 @@
 
 		public function selectUsuario(int $idpersona){
 			$this->intIdUsuario = $idpersona;
-			$sql = "SELECT u.id, u.nombre_propio, u.apellidos, u.telefono, u.email, r.id, r.nombre_rol, u.estado, DATE_FORMAT(u.fecha_registro, '%d-%m-%Y') as fechaRegistro 
+			$sql = "SELECT u.id, u.nombre_propio, u.apellidos, u.telefono, u.email, r.id, r.nombre_rol, u.estado as status, DATE_FORMAT(u.fecha_registro, '%d-%m-%Y') as fechaRegistro 
 					FROM usuarios u
 					INNER JOIN roles r
 					ON u.rol_id = r.id

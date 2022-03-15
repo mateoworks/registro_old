@@ -39,7 +39,7 @@
 			return $request;
 		}
 
-		public function insertRol(string $rol, string $descripcion, int $status){
+		public function insertRol(string $rol, string $descripcion, int $status, $seccional){
 
 			$return = "";
 			$this->strRol = $rol;
@@ -51,8 +51,8 @@
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO roles(nombre_rol, descripcion, estado) VALUES(?,?,?)";
-	        	$arrData = array($this->strRol, $this->strDescripcion, $this->intStatus);
+				$query_insert  = "INSERT INTO roles(nombre_rol, descripcion, seccional, estado) VALUES(?,?,?,?)";
+	        	$arrData = array($this->strRol, $this->strDescripcion, $seccional, $this->intStatus);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 			}else{
@@ -61,7 +61,7 @@
 			return $return;
 		}	
 
-		public function updateRol(int $idrol, string $rol, string $descripcion, int $status){
+		public function updateRol(int $idrol, string $rol, string $descripcion, int $status, int $seccional){
 			$this->intIdrol = $idrol;
 			$this->strRol = $rol;
 			$this->strDescripcion = $descripcion;
@@ -72,8 +72,8 @@
 
 			if(empty($request))
 			{
-				$sql = "UPDATE roles SET nombre_rol = ?, descripcion = ?, estado = ? WHERE id = $this->intIdrol ";
-				$arrData = array($this->strRol, $this->strDescripcion, $this->intStatus);
+				$sql = "UPDATE roles SET nombre_rol = ?, descripcion = ?, seccional = ?, estado = ? WHERE id = $this->intIdrol ";
+				$arrData = array($this->strRol, $this->strDescripcion, $seccional, $this->intStatus);
 				$request = $this->update($sql,$arrData);
 			}else{
 				$request = "exist";

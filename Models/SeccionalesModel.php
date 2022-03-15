@@ -2,7 +2,7 @@
 use Illuminate\Database\Eloquent\Model;
 	class SeccionalesModel extends Model
 	{
-		protected $table = 'persona';
+		protected $table = 'seccionales';
         public $timestamps = false;
 
     	protected $fillable = array(

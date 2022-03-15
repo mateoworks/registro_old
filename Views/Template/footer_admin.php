@@ -51,8 +51,9 @@ const base_url = "<?= base_url(); ?>";
 <script type="text/javascript" src="<?= media(); ?>/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript" src="<?= media(); ?>/js/functions_admin.js"></script>
+<?php if(!empty($data['page_functions_js'])){ ?>
 <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
-
+<?php } ?>
 </body>
 
 </html>

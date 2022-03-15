@@ -1,5 +1,5 @@
 <?php 
-
+require_once("Models/SeccionalesModel.php");
 	class Roles extends Controllers{
 		public function __construct()
 		{
@@ -25,6 +25,21 @@
 			$this->views->getView($this,"roles",$data);
 		}
 
+		public function crear(){
+			$seccionales = SeccionalesModel::all();
+			$data["seccionales"] = $seccionales->toArray();
+			$this->views->getView($this, "crear", $data);
+		}
+
+		public function editar($idrol){
+			$id = intval($idrol);
+			$data["rol"] = $this->getRolById($id);
+			$seccionales = SeccionalesModel::all();
+			$data["seccionales"] = $seccionales->toArray();
+			$this->views->getView($this, "editar", $data);
+			
+		}
+
 		public function getRoles()
 		{
 			if($_SESSION['permisosMod']['r']){
@@ -47,7 +62,7 @@
 
 					if($_SESSION['permisosMod']['u']){
 						$btnView = '<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos('.$arrData[$i]['id'].')" title="Permisos"><i class="uil-key-skeleton-alt"></i></button>';
-						$btnEdit = '<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol('.$arrData[$i]['id'].')" title="Editar"><i class="dripicons-pencil"></i></button>';
+						$btnEdit = '<a class="btn btn-primary btn-sm btnEditRol" href="' . base_url() . '/Roles/editar/' . $arrData[$i]['id'].'" title="Editar"><i class="dripicons-pencil"></i></a>';
 					}
 					if($_SESSION['permisosMod']['d']){
 						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['id'].')" title="Eliminar"><i class="dripicons-trash"></i></button>
@@ -76,6 +91,23 @@
 			die();		
 		}
 
+		public function getRolById(int $idrol){
+			if($_SESSION['permisosMod']['r']){
+				$intIdrol = intval(strClean($idrol));
+				if($intIdrol > 0)
+				{
+					$arrData = $this->model->selectRol($intIdrol);
+					if(empty($arrData))
+					{
+						error_log("No hay rol con ese ID");
+					}else{
+						return $arrData;
+					}
+				}
+			}
+			die();
+		}
+
 		public function getRol(int $idrol)
 		{
 			if($_SESSION['permisosMod']['r']){
@@ -97,41 +129,31 @@
 
 		public function setRol(){
 				$intIdrol = intval($_POST['idRol']);
-				$strRol =  strClean($_POST['txtNombre']);
-				$strDescipcion = strClean($_POST['txtDescripcion']);
-				$intStatus = intval($_POST['listStatus']);
+				$strRol =  strClean($_POST['nombre_rol']);
+				$strDescipcion = strClean($_POST['descripcion']);
+				$intStatus = intval($_POST['estado']);
+				$intSeccional = intval($_POST["seccional"]);
 				$request_rol = "";
 				if($intIdrol == 0)
 				{
 					//Crear
 					if($_SESSION['permisosMod']['w']){
-						$request_rol = $this->model->insertRol($strRol, $strDescipcion,$intStatus);
+						$request_rol = $this->model->insertRol($strRol, $strDescipcion,$intStatus, $intSeccional);
 						$option = 1;
+						header("Location:".base_url().'/roles');
+						die();
 					}
 				}else{
 					//Actualizar
 					if($_SESSION['permisosMod']['u']){
-						$request_rol = $this->model->updateRol($intIdrol, $strRol, $strDescipcion, $intStatus);
-						$option = 2;
+						$request_rol = $this->model->updateRol($intIdrol, $strRol, $strDescipcion, $intStatus, $intSeccional);
+						error_log("Se envío");
 					}		
 				}
 
-				if($request_rol > 0 )
-				{
-					if($option == 1)
-					{
-						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-					}else{
-						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-					}
-				}else if($request_rol == 'exist'){
-					
-					$arrResponse = array('status' => false, 'msg' => '¡Atención! El Rol ya existe.');
-				}else{
-					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
-				}
-				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
-			die();
+				
+				header("Location:".base_url().'/roles');
+				die();
 		}
 
 		public function delRol()

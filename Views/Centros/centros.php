@@ -101,6 +101,13 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <nav>
+                        <ul class="pagination pagination-rounded mb-0">
+                            <?= $data["link"]; ?>
+                        </ul>
+                    </nav>
+
                 </div>
             </div>
         </div>

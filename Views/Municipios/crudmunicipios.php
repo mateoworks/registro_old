@@ -39,35 +39,40 @@
                         <table class="table table-hover table-centered mb-0">
                             <thead>
                                 <th>ID</th>
-                                <th>Revisado</th>
-                                <th>RevObs</th>
-                                <th>Regional</th>
-                                <th>Estatal</th>
                                 <th>Seccional</th>
-                                <th>FechaFundación</th>
                                 <th>Municipio</th>
                                 <th>Responsable</th>
-                                <th>Mayor18</th>
-                                <th>Padrón</th>
-                                <th>Localidades</th>
-                                <th>Nivel</th>
+                                <th>Población total</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                                 <?php foreach($municipios as $municipio){ ?>
                                 <tr>
                                     <td><?= $municipio["id"]; ?></td>
-                                    <td><?= $municipio["Revisado"]; ?></td>
-                                    <td><?= $municipio["RevObs"]; ?></td>
-                                    <td><?= $municipio["Regional"]; ?></td>
-                                    <td><?= $municipio["Estatal"]; ?></td>
                                     <td><?= $municipio["Seccional"]; ?></td>
-                                    <td><?= $municipio["FechaFundacion"]; ?></td>
                                     <td><?= $municipio["Municipio"]; ?></td>
                                     <td><?= $municipio["Responsable"]; ?></td>
                                     <td><?= $municipio["PobTotal"]; ?></td>
-                                    <td><?= $municipio["Mayor18"]; ?></td>
-                                    <td><?= $municipio["Localidades"]; ?></td>
-                                    <td><?= $municipio["Nivel"]; ?></td>
+                                    <td>
+                                        <div class="btn-group mb-2">
+                                            <?php if($_SESSION['permisosMod']['r']){ ?>
+                                            <a class="btn btn-info"
+                                                href="<?= base_url() . "/municipios/ver/" . $municipio["id"]; ?>">
+                                                <i class="dripicons-preview"></i>
+                                            </a>
+                                            <?php } ?>
+                                            <?php if($_SESSION['permisosMod']['u']){ ?>
+                                            <a class="btn btn-warning">
+                                                <i class="dripicons-pencil"></i>
+                                            </a>
+                                            <?php } ?>
+                                            <?php if($_SESSION['permisosMod']['d']){ ?>
+                                            <a class="btn btn-danger">
+                                                <i class="dripicons-trash"></i>
+                                            </a>
+                                            <?php } ?>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

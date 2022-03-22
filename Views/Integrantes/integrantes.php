@@ -18,7 +18,7 @@
                 </div>
                 <h4 class="page-title">Integrantes
                     <?php if($_SESSION['permisosMod']['w']){ ?>
-                    <a class="btn btn-primary">
+                    <a class="btn btn-primary" href="<?= base_url(); ?>/integrantes/crear">
                         <i class="uil-plus"></i>
                         Nuevo
                     </a>

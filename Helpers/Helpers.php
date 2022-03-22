@@ -73,6 +73,101 @@
         return $request;
     }
 
+    function paginar(int $page, int $filas, $modulo){
+		$filasTabla = $filas;
+			$pagina = intval($page);
+			$data = array();
+			$FILAS = 20;
+			$data["link"] = "";
+			$paginas = ceil($filasTabla / $FILAS);			
+			if($pagina > 1){
+				$data["link"] .= "
+				<li class='page-item'>
+					<a class='page-link' href='" . base_url() . "/$modulo/page/" . $pagina - 1 ."' aria-label='Previous'>
+						<span aria-hidden='true'>&laquo;</span>
+					</a>
+				</li>";
+			}
+			if($pagina > 3){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/page/" . 1 . "'>1</a></li>";
+				$data["link"] .= ". . .";
+			}
+			if($pagina - 2 > 0){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/page/" . $pagina - 2 . "'>" . $pagina - 2 ."</a></li>";
+			}
+			if($pagina - 1 > 0){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/page/" . $pagina - 1 . "'>" . $pagina - 1 ."</a></li>";
+			}
+			$data["link"] .= "<li class='page-item active'><a class='page-link' href='" . base_url() . "/$modulo/page/" . $pagina . "'>" . $pagina . "</a></li>";
+			if($pagina + 1 < $paginas + 1){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/page/" . $pagina + 1 . "'>" . $pagina + 1 ."</a></li>";
+			}
+			if($pagina + 2 < $paginas + 1){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/page/" . $pagina + 2 . "'>" . $pagina + 2 ."</a></li>";
+			}
+			if($pagina < $paginas - 2){
+				$data["link"] .= ". . .";
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/page/" . $paginas . "'>" . $paginas ."</a></li>";
+			}
+			if($pagina < $paginas){
+				$data["link"] .= "
+				<li class='page-item'>
+					<a class='page-link' href='" . base_url() . "/$modulo/page/" . $page + 1 ."' aria-label='Next'>
+						<span aria-hidden='true'>&raquo;</span>
+					</a>
+				</li>";
+			}
+
+			return $data;
+	}
+
+    function paginarcrud(int $page, int $filas, $modulo){
+		$filasTabla = $filas;
+			$pagina = intval($page);
+			$data = array();
+			$FILAS = 20;
+			$data["link"] = "";
+			$paginas = ceil($filasTabla / $FILAS);			
+			if($pagina > 1){
+				$data["link"] .= "
+				<li class='page-item'>
+					<a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $pagina - 1 ."' aria-label='Previous'>
+						<span aria-hidden='true'>&laquo;</span>
+					</a>
+				</li>";
+			}
+			if($pagina > 3){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . 1 . "'>1</a></li>";
+				$data["link"] .= ". . .";
+			}
+			if($pagina - 2 > 0){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $pagina - 2 . "'>" . $pagina - 2 ."</a></li>";
+			}
+			if($pagina - 1 > 0){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $pagina - 1 . "'>" . $pagina - 1 ."</a></li>";
+			}
+			$data["link"] .= "<li class='page-item active'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $pagina . "'>" . $pagina . "</a></li>";
+			if($pagina + 1 < $paginas + 1){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $pagina + 1 . "'>" . $pagina + 1 ."</a></li>";
+			}
+			if($pagina + 2 < $paginas + 1){
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $pagina + 2 . "'>" . $pagina + 2 ."</a></li>";
+			}
+			if($pagina < $paginas - 2){
+				$data["link"] .= ". . .";
+				$data["link"] .= "<li class='page-item'><a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $paginas . "'>" . $paginas ."</a></li>";
+			}
+			if($pagina < $paginas){
+				$data["link"] .= "
+				<li class='page-item'>
+					<a class='page-link' href='" . base_url() . "/$modulo/pagina/" . $page + 1 ."' aria-label='Next'>
+						<span aria-hidden='true'>&raquo;</span>
+					</a>
+				</li>";
+			}
+
+			return $data;
+	}    
     //Elimina exceso de espacios entre palabras
     function strClean($strCadena){
         $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);

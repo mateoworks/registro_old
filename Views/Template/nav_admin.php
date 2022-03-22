@@ -41,9 +41,8 @@
                     </li>
                     <?php } ?>
 
-                    <li class="side-nav-title side-nav-item">Administración</li>
-
                     <?php if(!empty($_SESSION['permisos'][2]['r'])){ ?>
+                    <li class="side-nav-title side-nav-item">Administración</li>
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#sidebarUsuarios" aria-expanded="false"
                             aria-controls="sidebarUsuarios" class="side-nav-link">
@@ -98,10 +97,10 @@
                         <div class="collapse" id="municipiosPage">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="<?= base_url(); ?>/municipios">Tabla</a>
+                                    <a href="<?= base_url(); ?>/municipios/municipioscrud">Municipios CRUD</a>
                                 </li>
                                 <li>
-                                    <a href="#">Consultas</a>
+                                    <a href="<?= base_url(); ?>/municipios">Tabla 2. Municipios</a>
                                 </li>
                             </ul>
                         </div>
@@ -161,10 +160,10 @@
                         <div class="collapse" id="integrantesPage">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="<?= base_url(); ?>/integrantes">Tabla</a>
+                                    <a href="<?= base_url(); ?>/integrantes/integrantescrud">CRUD integrantes</a>
                                 </li>
                                 <li>
-                                    <a href="#">Consultas</a>
+                                    <a href="<?= base_url(); ?>/integrantes">5. Tabla básica</a>
                                 </li>
                             </ul>
                         </div>
